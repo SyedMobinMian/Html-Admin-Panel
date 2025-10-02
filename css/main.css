@@ -1,0 +1,166 @@
+     
+        
+        /* Navbar styling */
+        .navbar {
+            height: var(--navbar-height);
+            background-color: white;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            padding: 0.5rem 1rem;
+        }
+        
+        /* Company branding */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand img {
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+        
+        /* Search bar */
+        .search-bar {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        /* Sidebar styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--navbar-height));
+            position: fixed;
+            top: var(--navbar-height);
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            transition: all 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        /* Collapsed sidebar */
+        .sidebar.collapsed {
+            width: var(--sidebar-collapsed-width);
+        }
+        
+        /* Sidebar navigation items */
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            color: #d1d3e2;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            background-color: rgba(78, 115, 223, 0.05);
+        }
+        
+        /* Collapsed sidebar styles */
+        .sidebar.collapsed .nav-link span {
+            display: none;
+        }
+        
+        .sidebar.collapsed .nav-link {
+            justify-content: center;
+            padding: 0.75rem;
+        }
+        
+        /* Main content area */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            margin-top: var(--navbar-height);
+            min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        /* Adjust main content when sidebar collapsed */
+        .sidebar.collapsed ~ .main-content {
+            margin-left: var(--sidebar-collapsed-width);
+        }
+        
+        /* Footer styling */
+        .footer {
+            margin-left: var(--sidebar-width);
+            height: var(--footer-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 -0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            transition: all 0.3s;
+            padding: 0 1.5rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                margin-left: calc(-1 * var(--sidebar-width));
+            }
+            
+            .sidebar.show {
+                margin-left: 0;
+            }
+            
+            .main-content, .footer {
+                margin-left: 0 !important;
+            }
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Custom badge styles */
+        .badge-status {
+            padding: 0.35em 0.65em;
+            font-size: 0.75em;
+            font-weight: 700;
+            border-radius: 0.25rem;
+        }
+        
+        .badge-active {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .badge-inactive {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .badge-pending {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        /* Action buttons */
+        .action-btn {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        
+        /* Page specific styles */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+    
